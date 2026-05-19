@@ -10,7 +10,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--navy:#1a2744;--gold:#c9a84c;--gold-light:#e8c96a;--cream:#faf8f3;--text:#2d3748}
-body{font-family:'Inter',sans-serif;color:var(--text);background:#fff}
+body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;padding-top:40px}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:580px;background:var(--navy);display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -85,9 +85,11 @@ nav.scrolled{background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,0.3)}
 .contact-value a{color:var(--gold);text-decoration:none}
 
 /* BANNER */
-.banner{background:linear-gradient(135deg,var(--navy),#2c3e6e);padding:80px 24px;text-align:center;color:#fff}
-.banner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:600;margin-bottom:16px}
-.banner p{color:rgba(255,255,255,0.7);margin-bottom:32px;font-size:16px}
+#buy-banner{position:fixed;top:0;left:0;width:100%;background:#000;color:#fff;z-index:9999;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+#buy-banner p{font-size:14px;margin:0}
+#buy-banner a.stripe{background:#ff4d00;color:#fff;text-decoration:none;padding:8px 18px;border-radius:4px;font-size:13px;font-weight:500;white-space:nowrap;flex-shrink:0}
+@media(max-width:600px){#buy-banner .dt{display:none}}
+@media(min-width:601px){#buy-banner .mob{display:none}}
 
 /* FOOTER */
 footer{background:#111827;color:rgba(255,255,255,0.5);padding:32px 24px;text-align:center;font-size:13px}
@@ -123,7 +125,7 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none}
 </nav>
 
 <section class="hero">
-  <div class="hero-bg"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-u3kNCEEX9U-xOeH11r-BYxBHbqA62ptGTYjG5CSwTIxlwUy-7dcgiglCf9q-tae7Q3fdCWohAbpwHwNV33U9gjdkmU3FOLatNP0fKVSXQ3HCGKVHMlveeTHCFWqLbBMJ0Da5L08VICLf6ACLwcLtt97NdIby-YBSQCM0zYbNVJAt89hS7Zl8KaqEdE3vwFv23zOeBnFUWdEmqm3bnHo9o_GpBxKj26LGdnJxURnvRQ978xnNTTtucUozuAylScHo6KRDSj_F0MqYh_ZTmdAfxQdM3fefkbKusn-zLRjNhvC_cf-CCKdIEraIc--fv4NZJIECS9HFRp-ZXlEunYYOcDkoQqGkRSuQJthxdL0NWJtunIMsV0ZMPCnZ1nwGPn0YelF0c7l9C0FZrvSCJgLszeTw3gq3zwGBa2tTD8Qwle8vtp&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM" alt="ACI Autoscuola Biagi e nautica Bologna" style="width:100%;height:100%;object-fit:cover;opacity:0.35"></div>
+  <div class="hero-bg"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-uRhPIZofNFIb-orC2Ypn8C5Y49k1CDcWIRLmxmXqYzcrlxbEakI5TdD8_3rwxuebsWkFJSO9L4MUAHYgpZsbq6H6Z0MEZLcPgDrVTiDcUA4GTFUCJFmR4634rofHjOqIPru21CJBRQvXz1XPHWEXM3Bsd_s8rw7L36rgeecb0Z8e_gpFfcoo1N0UNybf6lKCNDqZzqWyGc-u-9LDk38K_G1lxDvSR2aEgn9YdIb16uPgsxs9szxFmnm1IldcUvTV2DBuk9wns487zTCaqzGGiZO9ELxV5t9PcgtaWxL3CU7XZ3dPtKYSYvEy0mK7lzOoLpoJ4uVDdyc5kfUiMUFu1KTj1--G80fF35KNO-ufYw2yuG5cik6cbOz-C0G_5pEhEskSiICKI2qTQ6z4WMG1KiIAVxJvNLPIlGSYHHiV7VZSUo&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM" alt="ACI Autoscuola Biagi e nautica Bologna" style="width:100%;height:100%;object-fit:cover;opacity:0.35"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">Autoscuola · Bologna</div>
@@ -150,7 +152,7 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none}
         </div>
       </div>
       <div class="about-img">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=700&photoreference=Ab43m-vSTZ8kOMGUyT-kVWfwG2YI5igl_tEzneoT49wXcUS3OXuEbcuWQVlQUgNABML0rHGNziVXOG4OQxkpcXbL7PWbC41LfTBBpVWVjo6_ruy3Q_8r8hCDAyAZ2yK4hVihB66TZUBhaFhEry4gXGQvCjBRR11XgUf5sFFq7M8CMYAc8Knkf1zTcsVorAKXaLWEjH5w-lMjE1vzM-kHLXUv1srtvO32p0yjnDp0TaLH6KWGaMhQGZjkcN9gMYHwwcsIgbJARP2S-jbGjQP35orTfwGV9W9x0pei1RfOHztl7Clw6NiSH3NazNvJnxyqmTF_qrr2SECvJZNJ-TZElc2CSPNQPmLFd0SJoDpxBH0RT_P014FTgR1WFtngAandPig3hIyhLIivAoWPI7VDJ_meiyrV7d1B8iXmQ9QaWldm3T0&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM" alt="ACI Autoscuola Biagi e nautica Bologna">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=700&photoreference=Ab43m-tQokfHJLbZYFyPPpdEmeaRUkf9Z1NtYa9-lW-Yf9zsjEuR3nhCVl-nHz5nSaWBT4rBCWTsPOScg9XS2Dea5EDpdTGj4I28RPOg6Nxen4VzqNPPFC7hDOTj-Z0gteFxWxq7E_S6xDiXzOXCZBGlaYF7PF2MmZzLWOtWTm3Oh7xZHwiM8RZkA2hkulp15uf6i9TMfLwftPt-9UNxh_S55QFPh1oYdi6LUKaSjOb57Is1dkzHY55oA-mh-gHECQ5vCGR1Jiy-fmg736gkJGMHk2elrRwIijHzZDaP3wCq4a98ynmKuZ6USVup-Vr18jWTWVbzESKV87NV5HQmgWHscq0204SJFptbWaA-jcbWjhsNLnhwZQ04dU-S3IeJSKT6DJ3NI1QlYe-lOqsu4yIZcDgDnfTqFcD730lwDPfQsKQ&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM" alt="ACI Autoscuola Biagi e nautica Bologna">
       </div>
     </div>
   </div>
@@ -160,7 +162,7 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none}
   <div class="container">
     <h2 class="section-title">Servizi offerti</h2>
     <div class="services-grid"><div class="service-item"><div class="service-icon">⚖</div><span>Consulenza professionale</span></div><div class="service-item"><div class="service-icon">⚖</div><span>Assistenza specializzata</span></div><div class="service-item"><div class="service-icon">⚖</div><span>Supporto clienti</span></div><div class="service-item"><div class="service-icon">⚖</div><span>Pratiche burocratiche</span></div><div class="service-item"><div class="service-icon">⚖</div><span>Documentazione</span></div><div class="service-item"><div class="service-icon">⚖</div><span>Follow-up</span></div></div>
-    <div class="photo-grid"><div class="photo-item" style="background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=Ab43m-vSTZ8kOMGUyT-kVWfwG2YI5igl_tEzneoT49wXcUS3OXuEbcuWQVlQUgNABML0rHGNziVXOG4OQxkpcXbL7PWbC41LfTBBpVWVjo6_ruy3Q_8r8hCDAyAZ2yK4hVihB66TZUBhaFhEry4gXGQvCjBRR11XgUf5sFFq7M8CMYAc8Knkf1zTcsVorAKXaLWEjH5w-lMjE1vzM-kHLXUv1srtvO32p0yjnDp0TaLH6KWGaMhQGZjkcN9gMYHwwcsIgbJARP2S-jbGjQP35orTfwGV9W9x0pei1RfOHztl7Clw6NiSH3NazNvJnxyqmTF_qrr2SECvJZNJ-TZElc2CSPNQPmLFd0SJoDpxBH0RT_P014FTgR1WFtngAandPig3hIyhLIivAoWPI7VDJ_meiyrV7d1B8iXmQ9QaWldm3T0&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM')"></div><div class="photo-item" style="background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=Ab43m-sIbJtCUm1BLt8L1DYCjsoVpw80h-hau8593HPvzYqLwW5k_4YqqnGg6vnOPRECWIEdIbckK0818H6gfgdz45Jz9nYVozyGpOC8rdNeZOtExa5k9iZLFi8FJxHpWGw3nNX4Ot-8RdgAMbwY1Vdr_3HG5Vg8yLcqNg0XF8eg3HMLVY2l9pjXVMtQ3P_sprDHgGxZk8RH5DtlUzESyF5rU3GkIh5FYzQdNyxiuLh1MSaV0VlKPEMYXCwmSmeVRp_dnBNK5hIoLStC1rd3CXOPI-Z4lp-tuuN3FjhjZF4-GjTKzJ5GfQTnJIxfhm_xp6IVB8zI5BdIacZnIbGjjiHZVstqFDv0KiFCaKbhdsOHuIpax9-5wzrJCBXhKuPAGpBhqUsQ58z35c0HL4Zq2OiD7TnePbv0He_b16iDn87nHWC8Aw&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM')"></div><div class="photo-item" style="background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=Ab43m-spqSoXB77tl1DWCwrxJliyDQSSiiNre7vffFrIYPXT4qcnK38Lon9qvSUziwIZ9PIWLiLe6DBOl5Y_HyPrlwTMkkyW8NzvQCgu7DcFm-2t87XKOGeL2fGB2vsCUlXms5pklZ8KzXYdaDEMqV8ZFJJjlwztk1rtrefjUFVj55VQbaV_26uad1nETi21Ni5v_-0uA-pQyOawVKNICxWESk39zqL9IeN4w3jSBZU71KtYP5_difN8X1jwNnbhzYa9YgZJ1cc29J18R3DRjj6iVS5fqTeUYloP9PdMsBNFNA9Y4aWICc5UfRrYalZtxQf6lHUr7fBudVFq_eLMugYqfIX8pcr_oG6bygyWXJgRwZEODnCzVJggmXFexqglH3KMco3lwf9JMtHqglsNa693UPfCxTCbFRuKOEx4vuroMTFZ49E4&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM')"></div><div class="photo-item" style="background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=Ab43m-tWK6KHEHphynlQxM79bZrGQLY2Dput8-A4ejWjojO-pK_4aoM5CFIkMB-B7Mjmhtafm9NxcAi_ieRVr2qmk83H04peBL6_hRtcoR8vpHHX1_rY2NVuX11_bbx_3bDGEk-B9zGfpyt10G9kWUBVZn4eII8lqwaltCNFtoPhAgPIpgXxR2suX7Vcpewj6_OChErF2WGIecDcpHfqcXkOq5asqYnCAq3K9D4H4jo0-pX-ppmPES8Fe4O-Q0-A3EKP_AgJzyhRnBuw_pgfvkEAXf15Zjf9oH6ALmdmvh-4YxHQaku55QQeSfqR99Cbg9YdEUncb0Ls128GOT4NtF75SSpeNJLQ5XOang-ZNNyNBLZzXjOBaTb1FDbDizNyq7j6mFQk17HFWgze_-sPfW1AU2d5TjRX48za3uHo7Xv_jPw&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM')"></div></div>
+    <div class="photo-grid"><div class="photo-item" style="background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=Ab43m-tQokfHJLbZYFyPPpdEmeaRUkf9Z1NtYa9-lW-Yf9zsjEuR3nhCVl-nHz5nSaWBT4rBCWTsPOScg9XS2Dea5EDpdTGj4I28RPOg6Nxen4VzqNPPFC7hDOTj-Z0gteFxWxq7E_S6xDiXzOXCZBGlaYF7PF2MmZzLWOtWTm3Oh7xZHwiM8RZkA2hkulp15uf6i9TMfLwftPt-9UNxh_S55QFPh1oYdi6LUKaSjOb57Is1dkzHY55oA-mh-gHECQ5vCGR1Jiy-fmg736gkJGMHk2elrRwIijHzZDaP3wCq4a98ynmKuZ6USVup-Vr18jWTWVbzESKV87NV5HQmgWHscq0204SJFptbWaA-jcbWjhsNLnhwZQ04dU-S3IeJSKT6DJ3NI1QlYe-lOqsu4yIZcDgDnfTqFcD730lwDPfQsKQ&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM')"></div><div class="photo-item" style="background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=Ab43m-svglhyvjN5G-U5Qw19-0NEmAMb9BmoN8A7dOdlyZRLej7mnOvZFa-jlTvtqs-0yKNe5xP3HqOQ2Za-Qih3RSdNqRpi-q4252vihlnVSzJlZ_aj8b_hBNbO48DMM_KZXpBeJMyui4t89FfEntewYy2BuoR-kSCltHgGfS5J0vCX6Tn3p1CCGynaqVDc2F-u0SRRrAlApDWP6x92xISUbsEOSyLWKi0mjcWCgH6J0MABIs5aLpbd0n0REB3cxoouVHWtcr06JdRgIACyTf6KyLSc0p94nVz7-CmvLLIm4hW6l1er1_yNw-mTtYc5DbXsF81WVX7CXrV0nk92DoPszEph3sw6nlvVQYV_zTCQDeuR3T0OOY22ov7CQgrQzBm6Sa0yszjpn1B96R4qn8MGY9SIh0DmE4bX9Vm6cOCRzfWQ-w&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM')"></div><div class="photo-item" style="background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=Ab43m-uPRZmDjz8YmX0kt5xnHU5Jx9sXIPAYzToppvQVqRxqCqZtn-lIDvxSeZl2Nfv5iOBEVR9OPO2hkp-BIKNDkOnxgidlTdyq8wBs9NBae8R7CWLDINkhc4Fa0-c2K5QH6ofhKLS9aW1xguufO7Ddcr4tp-qf-YldZ0IeWTLrQQ-m10uINO9ZiFJt0jAoxgnLBIpO9oMWah7cGrK5Nc2V_iLtH9UxB6K9-qhhu-M8n2YlFA46YOqkarAYJLi30gtxE8Jldl33Q66-TitPAfGASqzed-AkHDC_lxNsqIG4kLOeWH9GqgD4gsZWS4Lu512tPMMqa7FIF5t6Y8NWiJOumC88sBQge-xtbg_oFFnrQGVseatpi2kOre33Pmiy-jLsu6VZMzmB1kNGre75zb2h_odWO3kdp4oQpMfbOtoc4iwxp494&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM')"></div><div class="photo-item" style="background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=Ab43m-tkL5cfLfvZWP5sqz_LQzTUvAcYLCbbvwrFMXxJuAPZVhMy9voAj-eRSTwx92lMZ5f_QDixC_btnleTakq1aNlycJAYPSJgJMboWN2dkfEEB5KSLHhdgMqPoSd2tpGsjoLi_dKkJUuPuDhC6yXrxc4FVa2X-sphf46Ougo9FFWqaANMW6X3vGC8NX0jqqZrDKFq7CnWT_nTzT0lrpcOlMzd_f9ffK3a5gPKUezRQPlZvnu9-hUAuQOFCJ3ZnPLBMYKL8vzHmoB34-B5qu1v-i17m7dWZFSLVoOxZkW6l9LAonpx0WvHI3uUfXyM9MWlkKYQFa_-g9BM4sMZVX0fcDYErA1GiE2bFJ4xMS1w8v1j_CKKZZdR3tW3TzFHwgTXoXTLoL6YaoBdmDYGCTG3lCgl_6Jn98wK7xNIdIGkYj8&key=AIzaSyCYXbAb5oATfgJRzDY7v7_wNhQ6F7PltAM')"></div></div>
   </div>
 </section>
 
@@ -177,55 +179,6 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none}
     <div class="reviews-grid" id="revGrid">
       <div class="rev-card">
   <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
-    <img src="https://lh3.googleusercontent.com/a-/ALV-UjXD1rkbtnoVd-KWK25yEc05DR4W4d4rFtEoCzrS9RM2_qSWCok=s128-c0x00000000-cc-rp-mo-ba4" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
-    <div>
-      <div style="font-weight:600;font-size:14px;color:#1a2744">Luca Sinagra</div>
-      <div style="font-size:12px;color:#666">7 mesi fa</div>
-    </div>
-  </div>
-  <div style="color:#c9a84c;font-size:16px;margin-bottom:6px">★☆☆☆☆</div>
-  <p style="font-size:14px;color:#444;line-height:1.5;margin:0">Le recensioni negative non mentivano, ho sbagliato io a non tenerne conto. Nel caso dobbiate sbrigare pratiche per auto e moto molto meglio andare altrove.
-Ho trovato davanti a me una persona sgarbata, saccente e molto ma molto arrogante alla quale consiglio di imparare a rapportarsi con la gente in...</p>
-  <div style="position:absolute;bottom:12px;right:12px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" style="flex-shrink:0">
-<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-<path fill="none" d="M0 0h48v48H0z"/></svg></div>
-</div><div class="rev-card">
-  <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
-    <img src="https://lh3.googleusercontent.com/a-/ALV-UjURd3tO6_JVw1yS_mRD_6lIsmWxF3CeerOmz_i7jJ5PZc8UuR7p=s128-c0x00000000-cc-rp-mo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
-    <div>
-      <div style="font-weight:600;font-size:14px;color:#1a2744">Isabella Capriati</div>
-      <div style="font-size:12px;color:#666">5 mesi fa</div>
-    </div>
-  </div>
-  <div style="color:#c9a84c;font-size:16px;margin-bottom:6px">★☆☆☆☆</div>
-  <p style="font-size:14px;color:#444;line-height:1.5;margin:0">Pessima autoscuola. L' istruttore Davide è sgarbatissimo, sgradevole, senza pazienza e tende a fare le guide di 30 minuti pur pagando per 1 ora. Sconsiglio vivamente. Pessima esperienza.</p>
-  <div style="position:absolute;bottom:12px;right:12px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" style="flex-shrink:0">
-<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-<path fill="none" d="M0 0h48v48H0z"/></svg></div>
-</div><div class="rev-card">
-  <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
-    <img src="https://lh3.googleusercontent.com/a/ACg8ocLdgSl8U_YczYXnC9IxzZilXLWcnB5qj4XbbR37U2O--RxNbQ=s128-c0x00000000-cc-rp-mo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
-    <div>
-      <div style="font-weight:600;font-size:14px;color:#1a2744">Tommaso Tartarini</div>
-      <div style="font-size:12px;color:#666">8 mesi fa</div>
-    </div>
-  </div>
-  <div style="color:#c9a84c;font-size:16px;margin-bottom:6px">★★☆☆☆</div>
-  <p style="font-size:14px;color:#444;line-height:1.5;margin:0">Purtroppo è raro che guardi le recensioni, ma in questo caso avrei dovuto farlo poiché parlano da sé, l’autoscuola Biagi ha dei tempi di attesa davvero infiniti, ho aspettato 7 mesi prima di decidere di CAMBIARE AUTOSCUOLA perché pur facendo i quiz la data per l’esame teorico non arrivava mai e quan...</p>
-  <div style="position:absolute;bottom:12px;right:12px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" style="flex-shrink:0">
-<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-<path fill="none" d="M0 0h48v48H0z"/></svg></div>
-</div><div class="rev-card">
-  <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
     <img src="https://lh3.googleusercontent.com/a-/ALV-UjX3HbtePOrxbBRiub8VZAtcIs4w6ydXMoi4qjlZr2eYiU-1ORin=s128-c0x00000000-cc-rp-mo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
     <div>
       <div style="font-weight:600;font-size:14px;color:#1a2744">Greta Costa</div>
@@ -236,22 +189,6 @@ Ho trovato davanti a me una persona sgarbata, saccente e molto ma molto arrogant
   <p style="font-size:14px;color:#444;line-height:1.5;margin:0">Davide è il miglior istruttore di guida che potessi mai desiderare. A parte la preparazione su questioni puramente tecniche, la quale si è dimostrata eccellente, posso assicurare che ha una pazienza infinita (dote importantissima per questo lavoro).
 
 Non mi ha mai messo pressione nonostante fossero ...</p>
-  <div style="position:absolute;bottom:12px;right:12px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" style="flex-shrink:0">
-<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-<path fill="none" d="M0 0h48v48H0z"/></svg></div>
-</div><div class="rev-card">
-  <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
-    <img src="https://lh3.googleusercontent.com/a/ACg8ocJ1yE1I2FqDRb6AcIUFrnc7Vtjd7xIon_3dXjY6hmWHoPcTCQ=s128-c0x00000000-cc-rp-mo" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
-    <div>
-      <div style="font-weight:600;font-size:14px;color:#1a2744">S C</div>
-      <div style="font-size:12px;color:#666">3 anni fa</div>
-    </div>
-  </div>
-  <div style="color:#c9a84c;font-size:16px;margin-bottom:6px">★☆☆☆☆</div>
-  <p style="font-size:14px;color:#444;line-height:1.5;margin:0">Esperienza a dir poco esilarante. Istruttore sgarbato, sgodevole e del tutto impaziente. A dir poco scioccata per le così tante bestemmie che venivano utilizzate durante una guida se sbagliavo qualcosa o addirittura commenti non richiesti e del tutto sgradevoli nei miei confronti. Nonostante la mia ...</p>
   <div style="position:absolute;bottom:12px;right:12px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" style="flex-shrink:0">
 <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
 <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -282,16 +219,19 @@ Non mi ha mai messo pressione nonostante fossero ...</p>
       <div class="contact-card"><div class="contact-icon">📞</div><div class="contact-label">Telefono</div><div class="contact-value"><a href="tel:+39 051 220886">+39 051 220886</a></div></div>
       <div class="contact-card"><div class="contact-icon">📍</div><div class="contact-label">Indirizzo</div><div class="contact-value">Via Castiglione,  47/2ed, 40124 Bologna</div></div>
       <div class="contact-card"><div class="contact-icon">🏛</div><div class="contact-label">Specializzazione</div><div class="contact-value">Autoscuola</div></div>
+      <div class="contact-card" style="text-align:left">
+  <div class="contact-icon" style="text-align:center">🕐</div>
+  <div class="contact-label" style="text-align:center;margin-bottom:12px">Orari</div>
+  <table style="font-size:13px;width:100%"><tr><td style="padding:5px 16px 5px 0;">Lunedì</td><td style="color:rgba(255,255,255,0.8);">10–12:30 / 16–18:30</td></tr><tr><td style="padding:5px 16px 5px 0;font-weight:700;color:var(--gold)">Martedì</td><td style="color:#fff;font-weight:700;color:var(--gold)">10–12:30 / 16–18:30</td></tr><tr><td style="padding:5px 16px 5px 0;">Mercoledì</td><td style="color:rgba(255,255,255,0.8);">10–12:30 / 16–18:30</td></tr><tr><td style="padding:5px 16px 5px 0;">Giovedì</td><td style="color:rgba(255,255,255,0.8);">10–12:30 / 16–18:30</td></tr><tr><td style="padding:5px 16px 5px 0;">Venerdì</td><td style="color:rgba(255,255,255,0.8);">10–12:30 / 16–18:30</td></tr><tr><td style="padding:5px 16px 5px 0;">Sabato</td><td style="color:#e53e3e;">Chiuso</td></tr><tr><td style="padding:5px 16px 5px 0;">Domenica</td><td style="color:#e53e3e;">Chiuso</td></tr></table>
+</div>
     </div>
   </div>
 </section>
 
-<div class="banner">
-  <div class="container">
-    <h2>Vuoi un sito come questo per il tuo studio?</h2>
-    <p>Simplo crea siti web professionali in 24 ore per studi legali, notai e professionisti.</p>
-    <a href="https://buy.stripe.com/8x25kC7mo39M0bN1Mv1B601" class="btn-primary">Scopri Simplo →</a>
-  </div>
+<div id="buy-banner">
+  <p class="dt">Ti piace questo sito? Il tuo potrebbe essere identico — online in 5 giorni per €99</p>
+  <p class="mob">Vuoi un sito così? €99</p>
+  <a href="https://buy.stripe.com/8x25kC7mo39M0bN1Mv1B601" target="_blank" class="stripe">Inizia ora →</a>
 </div>
 
 <footer>
